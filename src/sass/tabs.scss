@@ -1,0 +1,85 @@
+.tabs-wrapper {
+
+  .state {
+    position: absolute;
+    left: -10000px;
+  }
+
+  .flex-tabs {
+    @include flex-container();
+
+    @include flex-wrap(wrap);
+
+    .tabs-content {
+      padding: 3rem;
+      display: none;
+      width: 100%;
+      border-top: 1px solid $main-color;
+      @include flex-basis(auto);
+    }
+
+    .tab-header {
+      display: inline-block;
+      padding: 1rem 5rem;
+      cursor: pointer;
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: $main-color;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
+      @include transition(0.2s);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+@for $i from 1 through 10 {
+  #tab-#{$i}:checked ~ .tabs #tab-#{$i}-label{font-weight: 800;}
+  #tab-#{$i}:checked ~ .tabs #tab-#{$i}-panel{display: block;}
+}
+
+
+
+@media (max-width: 600px) {
+
+  .tabs-wrapper {
+    .flex-tabs {
+      @include flex-direction-column();
+      .tabs-content {
+        border-top: 0;
+        padding: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .tab-header {
+        padding: 1rem;
+        border-bottom: 1px solid $main-color;
+      }
+
+      #tab-one-label {@include flex-order(1);}
+      #tab-one-panel {@include flex-order(2);}
+
+      #tab-two-label {@include flex-order(3);}
+      #tab-two-panel {@include flex-order(4);}
+
+      #tab-three-label {@include flex-order(5);}
+      #tab-three-panel {@include flex-order(6);}
+
+      #tab-four-label {@include flex-order(7);}
+      #tab-four-panel {@include flex-order(8);}
+    }
+  }
+
+  @for $i from 1 through 10 {
+    #tab-#{$i}:checked ~ .tabs #tab-#{$i}-label{}
+    #tab-#{$i}:checked ~ .tabs #tab-#{$i}-panel{}
+  }
+}
