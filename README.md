@@ -3,7 +3,7 @@
 BuddyCSS is a simple CSS framework to build awesome websites easily.
 
 
-<a href="http://buddycss.com/"><img src="http://buddycss.com/images/logo-buddy-color.png" alt="BuddyCSS" style="max-width:100%;" width="600" height="315"></a>
+<p style="text-center"><a href="http://buddycss.com/"><img src="http://buddycss.com/images/logo-buddy-color.png" alt="BuddyCSS" style="max-width:100%;" /></a></p>s
 
 ## Quick start
 
