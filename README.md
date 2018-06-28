@@ -1,10 +1,10 @@
 # [BuddyCSS](https://buddycss.com/)
 
-<p align="center">[![Slack](https://img.shields.io/badge/chat-slack-red.svg)](https://buddycss.slack.com)
+[![Slack](https://img.shields.io/badge/chat-slack-red.svg)](https://buddycss.slack.com)
 [![Documentation](https://img.shields.io/badge/doc-website-blue.svg)](https://buddycss.com/)
 [![Sass](https://img.shields.io/badge/sass-3.4.23-ff69b4.svg)](https://sass-lang.com/)
 [![Gulp](https://img.shields.io/badge/gulp-3.9.1-cf4647.svg)](https://gulpjs.com/)
-[![Babel](https://img.shields.io/badge/babel-6.x-f5da55.svg)](https://babeljs.io/)</p>
+[![Babel](https://img.shields.io/badge/babel-6.x-f5da55.svg)](https://babeljs.io/)
 
 <p align="center"><a href="https://buddycss.com/"><img src="https://buddycss.com/images/logo-buddy-color.png" alt="BuddyCSS" style="max-width:100%;" /></a></p>
 <p align="center">BuddyCSS is a simple CSS framework to build awesome websites easily.</p>
