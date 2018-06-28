@@ -1,9 +1,9 @@
 # [BuddyCSS](https://buddycss.com/)
 
+[![npm](https://img.shields.io/npm/v/buddycss.svg)][npm-link]
 
 
-
-<p align="center"><a href="https://buddycss.com/"><img src="http://sbuddycss.com/images/logo-buddy-color.png" alt="BuddyCSS" style="max-width:100%;" /></a></p>
+<p align="center"><a href="https://buddycss.com/"><img src="https://buddycss.com/images/logo-buddy-color.png" alt="BuddyCSS" style="max-width:100%;" /></a></p>
 <p align="center">BuddyCSS is a simple CSS framework to build awesome websites easily.</p>
 
 ## Quick start
