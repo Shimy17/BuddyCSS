@@ -1,7 +1,7 @@
 {
-  "name": "BuddyCSS",
+  "name": "buddycss",
   "version": "1.0.0",
-  "description": "A new responsive CSS framework to build websites easily.",
+  "description": "Responsive CSS framework to build websites easily.",
   "keywords": [
     "css",
     "sass",
@@ -12,7 +12,7 @@
     "web"
   ],
   "main": "index.js",
-  "homepage": "http://www.buddycss.com",
+  "homepage": "https://www.buddycss.com",
   "author": "Sciampagna Loïc",
   "license": "MIT",
   "dependencies": {
@@ -39,5 +39,12 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-wait": "^0.0.2",
     "run-sequence": "^2.2.1"
+  },
+  "repository": {
+   "type": "git",
+   "url": "https://github.com/BuddyCSS/BuddyCSS"
+ },
+ "bugs": {
+  "url": "https://github.com/BuddyCSS/BuddyCSS/issues"
   }
 }
