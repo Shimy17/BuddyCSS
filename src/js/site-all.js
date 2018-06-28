@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
   /********** MODALS **********/
   if(document.getElementById('pageModals')) {
     const pageModals        = document.getElementById('pageModals'),
-    boxModal          = pageModals.getElementsByClassName('box-modal'),
-    triggerOpenModal  = document.getElementsByClassName('triggerOpenModal'),
-    triggerCloseModal = document.getElementById('triggerCloseModal');
+    boxModal                = pageModals.getElementsByClassName('box-modal'),
+    triggerOpenModal        = document.getElementsByClassName('triggerOpenModal'),
+    triggerCloseModal       = document.getElementById('triggerCloseModal');
 
     const openModal = event => {
       const dataModal = event.currentTarget.getAttribute('data-modal');

@@ -5,31 +5,22 @@
 
 
 /********** PAGES **********/
+.page-header + .page-header-mobile + .page-content {
+  margin-left: 30rem;
+  @media(max-width: 1024px) {
+    margin-left: 0;
+  }
+}
 .page-content {
-    margin-left: 300px;
-    padding-top: 5rem;
-
-    @media(max-width: 1024px) {
-      margin-left: 0;
-      padding-top: 12rem;
-    }
+  @media(max-width: 1024px) {
+    margin-top: 10rem;
+  }
 }
 
 
 .page-wrapper {
   margin: auto;
-  padding: 0 10rem;
+  padding: 0 3rem;
 
-  @media(max-width: 1300px) {
-    padding: 0 5rem;
-  }
-
-  @media(max-width: 1024px) {
-    padding: 0 4rem;
-  }
-
-  @media(max-width: 640px) {
-    padding: 0 3rem;
-  }
 }
 /********** PAGES **********/

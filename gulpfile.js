@@ -17,7 +17,7 @@ var sourcemaps   = require('gulp-sourcemaps')
 
 
 gulp.task('includes', function() {
-  return  gulp.src(['src/*.html', 'src/menu/*.html'])
+  return  gulp.src(['src/*.html'])
     .pipe(fileinclude({
       annotations: false,
       verbose: false
@@ -63,6 +63,7 @@ gulp.task('cssmin', function () {
    return  gulp.src(['build/css/buddy.css', 'build/css/buddy.plugins.css'])
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
+        .pipe(sourcemaps.write("."))
         .pipe(gulp.dest('build/css'));
 });
 
@@ -73,7 +74,7 @@ gulp.task('clean-css', function()
 });
 
 gulp.task('styles', function() {
-  runSequence('sass', 'concat-styles', 'cssmin', 'clean-css', 'reload');
+  runSequence('sass', 'concat-styles', 'cssmin', 'reload');
 });
 /********** COMPILE SASS TO CSS AND MOVE TO BUILD FOLDER THEN MINIFY CSS *********/
 
@@ -125,12 +126,8 @@ gulp.task('copy-fontawesome', function() {
     return gulp.src('node_modules/@fortawesome/fontawesome-free/webfonts/**').pipe(gulp.dest('build/webfonts'));
 });
 
-gulp.task('copy-menu', function() {
-    return gulp.src('src/menu').pipe(gulp.dest('build/menu'));
-});
-
 gulp.task('copy', function() {
-  runSequence('copy-images', 'copy-fontawesome', 'copy-menu', 'reload');
+  runSequence('copy-images', 'copy-fontawesome', 'reload');
 });
 /********** COPY HTML AND JS FILES FROM SRC TO BUILD **********/
 
@@ -143,7 +140,7 @@ gulp.task('serve', function() {
 
     gulp.watch('src/sass/*.scss', ['styles']);
     gulp.watch('src/js/*.js', ['scripts']);
-    gulp.watch(['src/*.html', 'src/includes/*.html', 'src/menu/**/*.html'], function(){ runSequence('includes', 'reload') });
+    gulp.watch(['src/*.html', 'src/includes/*.html'], function(){ runSequence('includes', 'reload') });
     gulp.watch(['src/images/*'], ['copy-images']);
 });
 

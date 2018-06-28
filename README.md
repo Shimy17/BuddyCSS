@@ -1,10 +1,10 @@
 # [BuddyCSS](http://buddycss.com/)
 
-BuddyCSS is a simple CSS framework to build awesome websites easily.
+
 
 
 <p align="center"><a href="http://buddycss.com/"><img src="http://buddycss.com/images/logo-buddy-color.png" alt="BuddyCSS" style="max-width:100%;" /></a></p>
-
+<p align="center">BuddyCSS is a simple CSS framework to build awesome websites easily.</p>
 
 ## Quick start
 

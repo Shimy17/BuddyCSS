@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-
     /********** OPEN/CLOSE NAVIGATION  WHEN CLICKING ON NAV TRIGGER  **********/
     const touchEvent = ('ontouchstart' in document.documentElement ? 'touchstart' : 'click'),
           body = document.getElementsByTagName("body")[0],
