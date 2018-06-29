@@ -42,9 +42,21 @@ gulp.task('reload', function() {
 /********** COMPILE SASS TO CSS AND MOVE TO BUILD FOLDER THEN MINIFY CSS *********/
 gulp.task('sass', function () {
     return gulp.src('src/sass/import.scss')
+      .pipe(sourcemaps.init())
       .pipe(wait(500))
     	.pipe(sass().on('error', sass.logError))
     	.pipe(rename('buddy.css'))
+      .pipe(sourcemaps.write("."))
+    	.pipe(gulp.dest('build/css'));
+});
+
+gulp.task('sass-header', function () {
+    return gulp.src('src/sass/header.scss')
+      .pipe(sourcemaps.init())
+      .pipe(wait(500))
+    	.pipe(sass().on('error', sass.logError))
+    	.pipe(rename('buddy.header.css'))
+      .pipe(sourcemaps.write("."))
     	.pipe(gulp.dest('build/css'));
 });
 
@@ -55,26 +67,27 @@ gulp.task('concat-styles', function() {
       'node_modules/@fortawesome/fontawesome-free/css/solid.css',
       'node_modules/@fortawesome/fontawesome-free/css/fontawesome.css'
       ])
+      .pipe(sourcemaps.init())
       .pipe(concat('buddy.plugins.css'))
+      .pipe(sourcemaps.write("."))
       .pipe(gulp.dest('build/css'));
 });
 
 gulp.task('cssmin', function () {
-   return  gulp.src(['build/css/buddy.css', 'build/css/buddy.plugins.css'])
+   return  gulp.src(['build/css/buddy.css', 'build/css/buddy.plugins.css', 'build/css/buddy.header.css'])
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
-        .pipe(sourcemaps.write("."))
         .pipe(gulp.dest('build/css'));
 });
 
 gulp.task('clean-css', function()
 {
-	return gulp.src(['build/css/buddy.css', 'build/css/buddy.plugins.css'], {read: false})
+	return gulp.src(['build/css/buddy.css', 'build/css/buddy.plugins.css', 'build/css/buddy.header.css'], {read: false})
       .pipe(clean());
 });
 
 gulp.task('styles', function() {
-  runSequence('sass', 'concat-styles', 'cssmin', 'reload');
+  runSequence('sass', 'sass-header', 'concat-styles', 'cssmin', 'reload');
 });
 /********** COMPILE SASS TO CSS AND MOVE TO BUILD FOLDER THEN MINIFY CSS *********/
 
@@ -100,8 +113,6 @@ gulp.task('clean-js', function()
 	return gulp.src('build/js/buddy.js', {read: false}).pipe(clean());
 });
 
-
-
 gulp.task("babel", function () {
   return gulp.src("src/js/*.js")
     .pipe(sourcemaps.init())
@@ -115,6 +126,9 @@ gulp.task('scripts', function() { //if you don't work with babel, just replace t
   runSequence('babel', 'jsmin', 'reload');
 });
 /********** CONCAT JS, MINIFY AND DELETE THE UNMINIFIED THEN MOVE TO BUILD FOLDER **********/
+
+
+
 
 
 /********** COPY IMG AND FONTS FILES FROM SRC TO BUILD **********/
@@ -132,7 +146,7 @@ gulp.task('copy', function() {
 /********** COPY HTML AND JS FILES FROM SRC TO BUILD **********/
 
 
-
+/********** MAIN TASKS TO RUN **********/
 gulp.task('serve', function() {
     browserSync({
         server: "build/"
@@ -144,8 +158,6 @@ gulp.task('serve', function() {
     gulp.watch(['src/images/*'], ['copy-images']);
 });
 
-
-
 gulp.task('default', function()
 {
   runSequence('build', 'serve');
@@ -155,3 +167,40 @@ gulp.task('default', function()
 gulp.task('build', function() {
   runSequence('clean-build', 'copy', 'styles', 'scripts', 'includes');
 });
+/********** MAIN TASKS TO RUN **********/
+
+
+
+/********** CREATION OF MENU **********/
+gulp.task('compile-sass-menu-vertical-left-bar', function () {
+    return gulp.src('src/menu/vertical-left-bar/header.scss')
+      .pipe(sourcemaps.init())
+      .pipe(wait(500))
+    	.pipe(sass().on('error', sass.logError))
+    	.pipe(rename('buddy.header.css'))
+      .pipe(sourcemaps.write("."))
+    	.pipe(gulp.dest('build/menu/vertical-left-bar/'));
+});
+
+gulp.task('copy-menu-vertical-left-bar', function() {
+  return gulp.src('src/menu/vertical-left-bar/index.html').pipe(gulp.dest('build/menu/vertical-left-bar/'));
+});
+
+gulp.task('compile-sass-menu-top-bar', function () {
+    return gulp.src('src/menu/top-bar/header.scss')
+      .pipe(sourcemaps.init())
+      .pipe(wait(500))
+    	.pipe(sass().on('error', sass.logError))
+    	.pipe(rename('buddy.header.css'))
+      .pipe(sourcemaps.write("."))
+    	.pipe(gulp.dest('build/menu/top-bar/'));
+});
+
+gulp.task('copy-menu-top-bar', function() {
+  return gulp.src('src/menu/top-bar/index.html').pipe(gulp.dest('build/menu/top-bar/'));
+});
+
+gulp.task('create-menu', function() {
+  runSequence('compile-sass-menu-vertical-left-bar', 'copy-menu-vertical-left-bar', 'compile-sass-menu-top-bar', 'copy-menu-top-bar');
+});
+/********** CREATION OF MENU **********/
