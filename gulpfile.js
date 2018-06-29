@@ -172,35 +172,49 @@ gulp.task('build', function() {
 
 
 /********** CREATION OF MENU **********/
-gulp.task('compile-sass-menu-vertical-left-bar', function () {
+gulp.task('sass-vertical-left-bar', function () {
     return gulp.src('src/menu/vertical-left-bar/header.scss')
       .pipe(sourcemaps.init())
       .pipe(wait(500))
     	.pipe(sass().on('error', sass.logError))
     	.pipe(rename('buddy.header.css'))
       .pipe(sourcemaps.write("."))
-    	.pipe(gulp.dest('build/menu/vertical-left-bar/'));
+    	.pipe(gulp.dest('build/menu/vertical-left-bar'));
 });
 
-gulp.task('copy-menu-vertical-left-bar', function() {
+gulp.task('cssmin-vertical-left-bar', function () {
+   return  gulp.src('build/menu/vertical-left-bar/buddy.header.css')
+        .pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('build/menu/vertical-left-bar'));
+});
+
+gulp.task('copy-vertical-left-bar', function() {
   return gulp.src('src/menu/vertical-left-bar/index.html').pipe(gulp.dest('build/menu/vertical-left-bar/'));
 });
 
-gulp.task('compile-sass-menu-top-bar', function () {
+gulp.task('sass-top-bar', function () {
     return gulp.src('src/menu/top-bar/header.scss')
       .pipe(sourcemaps.init())
       .pipe(wait(500))
     	.pipe(sass().on('error', sass.logError))
     	.pipe(rename('buddy.header.css'))
       .pipe(sourcemaps.write("."))
-    	.pipe(gulp.dest('build/menu/top-bar/'));
+    	.pipe(gulp.dest('build/menu/top-bar'));
 });
 
-gulp.task('copy-menu-top-bar', function() {
+gulp.task('cssmin-top-bar', function () {
+   return  gulp.src('build/menu/top-bar/buddy.header.css')
+        .pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('build/menu/top-bar/'));
+});
+
+gulp.task('copy-top-bar', function() {
   return gulp.src('src/menu/top-bar/index.html').pipe(gulp.dest('build/menu/top-bar/'));
 });
 
 gulp.task('create-menu', function() {
-  runSequence('compile-sass-menu-vertical-left-bar', 'copy-menu-vertical-left-bar', 'compile-sass-menu-top-bar', 'copy-menu-top-bar');
+  runSequence('sass-vertical-left-bar', 'cssmin-vertical-left-bar', 'copy-vertical-left-bar', 'sass-top-bar', 'cssmin-top-bar', 'copy-top-bar');
 });
 /********** CREATION OF MENU **********/

@@ -64,17 +64,35 @@
         border-bottom: 1px solid $main-color;
       }
 
-      #tab-one-label {@include flex-order(1);}
-      #tab-one-panel {@include flex-order(2);}
+      #tab-1-label {@include flex-order(1);}
+      #tab-1-panel {@include flex-order(2);}
 
-      #tab-two-label {@include flex-order(3);}
-      #tab-two-panel {@include flex-order(4);}
+      #tab-2-label {@include flex-order(3);}
+      #tab-2-panel {@include flex-order(4);}
 
-      #tab-three-label {@include flex-order(5);}
-      #tab-three-panel {@include flex-order(6);}
+      #tab-3-label {@include flex-order(5);}
+      #tab-3-panel {@include flex-order(6);}
 
-      #tab-four-label {@include flex-order(7);}
-      #tab-four-panel {@include flex-order(8);}
+      #tab-4-label {@include flex-order(7);}
+      #tab-4-panel {@include flex-order(8);}
+
+      #tab-5-label {@include flex-order(7);}
+      #tab-5-panel {@include flex-order(8);}
+
+      #tab-6-label {@include flex-order(7);}
+      #tab-6-panel {@include flex-order(8);}
+
+      #tab-7-label {@include flex-order(7);}
+      #tab-7-panel {@include flex-order(8);}
+
+      #tab-8-label {@include flex-order(7);}
+      #tab-8-panel {@include flex-order(8);}
+
+      #tab-9-label {@include flex-order(7);}
+      #tab-9-panel {@include flex-order(8);}
+
+      #tab-10-label {@include flex-order(7);}
+      #tab-10-panel {@include flex-order(8);}
     }
   }
 
