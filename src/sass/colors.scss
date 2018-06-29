@@ -6,13 +6,13 @@
 .c-main-color-lighter {color: $main-color-lighter;}
 .c-main-color-lightest {color: $main-color-lightest;}
 
-.c-main-color-2-darkest {color: $main-color-2-darkest;}
-.c-main-color-2-darker {color: $main-color-2-darker;}
-.c-main-color-2-dark {color: $main-color-2-dark;}
+.c-secondary-color-darkest {color: $secondary-color-darkest;}
+.c-secondary-color-darker {color: $secondary-color-darker;}
+.c-secondary-color-dark {color: $secondary-color-dark;}
 .c-main-color {color: $main-color;}
-.c-main-color-2-light {color: $main-color-2-light;}
-.c-main-color-2-lighter {color: $main-color-2-lighter;}
-.c-main-color-2-lightest {color: $main-color-2-lightest;}
+.c-secondary-color-light {color: $secondary-color-light;}
+.c-secondary-color-lighter {color: $secondary-color-lighter;}
+.c-secondary-color-lightest {color: $secondary-color-lightest;}
 
 .c-gray-darkest {color: $gray-darkest;}
 .c-gray-darker {color: $gray-darker;}
@@ -54,10 +54,10 @@
 
 .bg-gradient-main-color {
 	background: $main-color;
-	background: -moz-linear-gradient(left, $main-color 0%, $main-color-2 100%);
-	background: -webkit-linear-gradient(left, $main-color 0%,$main-color-2 100%);
-	background: linear-gradient(to right, $main-color 0%,$main-color-2 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$main-color-2', endColorstr='$main-color',GradientType=1 );
+	background: -moz-linear-gradient(left, $main-color 0%, $secondary-color 100%);
+	background: -webkit-linear-gradient(left, $main-color 0%,$secondary-color 100%);
+	background: linear-gradient(to right, $main-color 0%,$secondary-color 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$secondary-color', endColorstr='$main-color',GradientType=1 );
 }
 
 

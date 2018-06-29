@@ -5,7 +5,7 @@ $icon-font-family:                "Font Awesome 5 Free", "Font Awesome 5 Brands"
 $path-images:                      "../images";
 
 $main-color:                      #3c93dc;
-$main-color-2:                    #3cdcdc;
+$secondary-color:                 #3cdcdc;
 
 $main-color-hover:                darken($main-color, 15%);
 
@@ -16,12 +16,12 @@ $main-color-light:                lighten($main-color, 15%);
 $main-color-lighter:              lighten($main-color, 30%);
 $main-color-lightest:             lighten($main-color, 45%);
 
-$main-color-2-darkest:              darken($main-color-2, 45%);
-$main-color-2-darker:               darken($main-color-2, 30%);
-$main-color-2-dark:                 darken($main-color-2, 15%);
-$main-color-2-light:                lighten($main-color-2, 15%);
-$main-color-2-lighter:              lighten($main-color-2, 30%);
-$main-color-2-lightest:             lighten($main-color-2, 45%);
+$secondary-color-darkest:         darken($secondary-color, 45%);
+$secondary-color-darker:          darken($secondary-color, 30%);
+$secondary-color-dark:            darken($secondary-color, 15%);
+$secondary-color-light:           lighten($secondary-color, 15%);
+$secondary-color-lighter:         lighten($secondary-color, 30%);
+$secondary-color-lightest:        lighten($secondary-color, 45%);
 
 $width-wrapper:                   1170px;
 
