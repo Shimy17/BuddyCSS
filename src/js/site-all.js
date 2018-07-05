@@ -56,4 +56,45 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   /********** INPUTS UNDERLINE ANIMATION **********/
 
+
+
+
+
+  /********** CUSTOM CHECKBOX **********/
+  let customCheckbox = document.querySelectorAll('.custom-input-checkbox');
+
+  const toggleActiveClass = event => {
+    event.currentTarget.classList.toggle('active');
+  };
+
+  for (let i=0, x=customCheckbox.length; i<x; i++) {
+    customCheckbox[i].addEventListener('change', toggleActiveClass);
+
+    if(customCheckbox[i].childNodes[0].checked == true) {
+      customCheckbox[i].classList.add('active');
+    }
+  }
+  /********** CUSTOM CHECKBOX **********/
+
+
+
+
+
+  /********** CUSTOM RADIO **********/
+  let customRadio = document.querySelectorAll('.custom-input-radio');
+
+  const addActiveClass = event => {
+    event.currentTarget.classList.toggle('active');
+  };
+
+  for (let i=0, x=customRadio.length; i<x; i++) {
+    customRadio[i].addEventListener('change', addActiveClass);
+
+    if(customRadio[i].childNodes[0].checked == true) {
+      customRadio[i].classList.add('active');
+    }
+  }
+  /********** CUSTOM CHECKBOX **********/
+
+
 }, false);

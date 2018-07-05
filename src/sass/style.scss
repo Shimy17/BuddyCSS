@@ -20,6 +20,35 @@
 .page-wrapper {
   margin: auto;
   padding: 0 3rem;
+}
 
+.page-fullscreen {
+  @include flex-container();
+  height: 100vh;
+  padding-top: 8.5rem;
+  align-items: center;
+  justify-content: center;
+
+  background: #3cdcdc;
+  background: -moz-radial-gradient(center, ellipse cover, #3cdcdc 0%, #3c93dc 98%);
+  background: -webkit-radial-gradient(center, ellipse cover, #3cdcdc 0%,#3c93dc 98%);
+  background: radial-gradient(ellipse at center, #3cdcdc 0%,#3c93dc 98%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3cdcdc', endColorstr='#3c93dc',GradientType=1 );
+  text-align: center;
+
+  .link {color: #ffffff;display: inline-block;margin: 0 2rem;@include opacity(0.6);@include transition(0.2s);}
+  .link:hover {@include opacity(1);@include transition(0.2s);}
+  p {color: #ffffff;font-size: 2rem;}
+  h1 {color: #ffffff;text-transform: uppercase;}
+
+  @media(max-width: 1023px) {
+    h1 {font-size: 3.6rem;}
+    p {margin-top: 2rem;}
+  }
+
+  @media(max-width: 640px) {
+    h1 {font-size: 3.2rem;}
+    p {font-size: 1.6rem;}
+  }
 }
 /********** PAGES **********/

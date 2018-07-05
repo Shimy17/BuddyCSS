@@ -86,6 +86,91 @@ output:-moz-ui-invalid {color: $red;}
 
 }
 
+.custom-input-checkbox {
+  display: inline-block;
+  position: relative;
+  padding-left: 1rem;
+
+  input {
+    display: inline-block;
+    width: auto;
+    //@include opacity(0);
+    //visibility: hidden;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid $main-color;
+    border-radius: 3px;
+    top: 48%;
+    left: 0;
+    @include translateY(-50%);
+  }
+
+  &:after {
+    font-family: $icon-font-family;
+    font-weight: 900;
+    position: absolute;
+    font-size: 1.1rem;
+    color: $main-color;
+    content: "\f00c";
+    left: 3px;
+    top: 48%;
+    display: none;
+    @include translateY(-50%);
+  }
+
+  &.active:after {
+    display: block;
+  }
+}
+
+.custom-input-radio {
+  display: inline-block;
+  position: relative;
+  padding-left: 1rem;
+
+  input {
+    display: inline-block;
+    width: auto;
+    //@include opacity(0);
+    //visibility: hidden;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid $main-color;
+    border-radius: 50%;
+    top: 48%;
+    left: 0;
+    @include translateY(-50%);
+  }
+
+  &:after {
+    position: absolute;
+    font-size: 1.1rem;
+    background-color: $main-color;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    content: "";
+    left: 5px;
+    top: 48%;
+    display: none;
+    @include translateY(-50%);
+  }
+
+  &.active:after {
+    display: block;
+  }
+}
+
 .input-search {
   position: relative;
   overflow: hidden; //IE hack
