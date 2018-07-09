@@ -9,7 +9,6 @@
   transform:$transform;
 }
 
-
 @mixin translateX($translateX)
 {
   -webkit-transform:translateX($translateX);
@@ -17,7 +16,6 @@
   -o-transform:translateX($translateX);
   transform:translateX($translateX);
 }
-
 
 @mixin translateZ($translateZ)
 {
@@ -34,7 +32,6 @@
   -o-transform:translateY($translateY);
   transform:translateY($translateY);
 }
-
 
 @mixin rotate($degrees)
 {
@@ -74,12 +71,6 @@
 /********** Transform CSS3 **********/
 
 
-
-
-
-
-
-
 /********** Animation **********/
 @mixin transition($transition)
 {
@@ -97,14 +88,6 @@
   transition-delay:$transition;
 }
 /********** Animation **********/
-
-
-
-
-
-
-
-
 
 
 /********** Filtres CSS3 style Photoshop **********/
@@ -259,15 +242,13 @@
 
 
 
-/********** Autres **********/
+/********** Others **********/
 @mixin box-shadow($arguments)
 {
   -webkit-box-shadow: $arguments;
   -moz-box-shadow: $arguments;
   box-shadow: $arguments;
 }
-
-
 
 @mixin box-sizing($sizing:border-box)
 {
@@ -309,8 +290,6 @@
   -o-animation: #{$str};
   animation: #{$str};
 }
-/********** Autres **********/
-
 
 @mixin position($position, $top, $right, $bottom, $left) {
   position: $position;
@@ -319,3 +298,4 @@
   bottom: $bottom;
   left: $left;
 }
+/********** Others **********/

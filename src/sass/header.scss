@@ -68,6 +68,7 @@
           border: 1px solid $gray-lightest;
           > li {
             border-bottom: 1px solid $gray-lightest;
+            background-color: #ffffff;
             &:last-child {border: 0;}
             > a {
               display: block;
@@ -165,7 +166,6 @@
 
           ul {
             position: relative;
-            background-color: #ffffff;
             box-shadow: none;
             border: 0;
           }
