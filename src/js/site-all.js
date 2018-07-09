@@ -76,8 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
   /********** CUSTOM RADIO **********/
   let customRadio = document.querySelectorAll('.custom-input-radio');
 
