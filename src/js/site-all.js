@@ -152,6 +152,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+  /********** expand/collapse **********/
+  const boxCollapseTrigger = document.querySelectorAll('.box-collapse .box-collapse-trigger button'),
+        boxCollapseContent = document.querySelectorAll('.box-collapse .box-collapse-content');
+
+  const toggleBoxCollapse = event => {
+    const dataCollapse = event.currentTarget.getAttribute('data-collapse');
+
+    for (let i=0, x=boxCollapseContent.length; i < x; i++) {
+      if(boxCollapseContent[i].getAttribute('id') == dataCollapse) {
+
+        if(boxCollapseContent[i].classList.contains('is-expanded')) {
+          event.currentTarget.setAttribute('aria-expanded', false);
+          boxCollapseContent[i].classList.remove('is-expanded');
+        }
+        else {
+          event.currentTarget.setAttribute('aria-expanded', true);
+          boxCollapseContent[i].classList.add('is-expanded');
+        }
+      }
+    }
+  };
+
+  for(let i=0, x=boxCollapseTrigger.length; i<x; i++) {
+    boxCollapseTrigger[i].addEventListener('click', toggleBoxCollapse);
+  }
+  /********** expand/collapse **********/
+
+
+
 
 
 }, false);

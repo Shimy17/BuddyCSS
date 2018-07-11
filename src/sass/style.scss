@@ -57,5 +57,10 @@
 .page-wrapper {
   margin: auto;
   padding: 0 3rem;
+  max-width: 1170px;
+
+  &.full-width {
+    max-width: 100%;
+  }
 }
 /********** PAGES **********/
