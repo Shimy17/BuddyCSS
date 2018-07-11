@@ -1,8 +1,13 @@
+body.modal-open {
+	overflow: hidden;
+}
+
 .page-modals {
 	@include position(fixed, 0,0,0,0);
 	visibility: hidden;
-	background-color: rgba(0,0,0,0.7);
 	z-index: 11;
+	overflow-x: hidden;
+	overflow-y: auto;
 	@include opacity(0);
 	@include transition(0.3s);
 
@@ -10,6 +15,16 @@
 		@include opacity(1);
 		visibility: visible;
 		@include transition(0.3s);
+	}
+
+
+
+
+	#pageModalsOverlayer {
+		@include position(fixed, 0,0,0,0);
+		background-color: rgba(0,0,0,0.7);
+		@include opacity(1);
+		cursor: pointer;
 	}
 
 
@@ -29,6 +44,29 @@
 		&.show {
 			@include opacity(1);
 			visibility: visible;
+		}
+
+		.box-modal-header {
+			border-bottom: 1px solid $gray-lightest;
+			margin-bottom: 3rem;
+			padding-bottom: 1rem;
+
+			button {
+				position: absolute;
+				top: 1px;
+				right: 1px;
+				background-color: transparent;
+				color: $gray-darkest;
+				padding: 2.5rem 3rem;
+				font-size: 2rem;
+				&:focus {outline: 1px solid $main-color;}
+			}
+		}
+
+		.box-modal-footer {
+			border-top: 1px solid $gray-lightest;
+			padding-top: 3rem;
+			margin-top: 3rem;
 		}
 
 

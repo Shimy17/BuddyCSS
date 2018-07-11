@@ -61,6 +61,7 @@
 
         ul {
           position: absolute;
+          background-color: #ffffff;
           display: none;
           width: 300px;
           text-align: left;
@@ -68,6 +69,7 @@
           border: 1px solid $gray-lightest;
           > li {
             border-bottom: 1px solid $gray-lightest;
+            background-color: #ffffff;
             &:last-child {border: 0;}
             > a {
               display: block;
@@ -76,6 +78,11 @@
 
             }
           }
+        }
+
+        &.has-sub-level.show:after {@include rotate(-180deg);}
+        &.show, &.show:hover {
+          ul {display: block;}
         }
 
         &:hover {
@@ -152,20 +159,17 @@
           margin: 0;
 
           &.has-sub-level:after {color: #ffffff;right: 3rem;}
-          &.has-sub-level.show:after {@include rotate(-180deg);}
-          &.show, &.show:hover {
-            ul {display: block;}
-          }
 
           > a {
             color: #ffffff;
             text-align: left;
             padding-right: 5rem;
+
+            &:focus {outline: 1px solid #ffffff;}
           }
 
           ul {
             position: relative;
-            background-color: #ffffff;
             box-shadow: none;
             border: 0;
           }

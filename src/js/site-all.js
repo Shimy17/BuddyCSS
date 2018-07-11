@@ -1,23 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  /********** MODALS **********/
+  /********** Modals **********/
   if(document.getElementById('pageModals')) {
-    const pageModals        = document.getElementById('pageModals'),
-    boxModal                = pageModals.getElementsByClassName('box-modal'),
-    triggerOpenModal        = document.getElementsByClassName('triggerOpenModal'),
-    triggerCloseModal       = document.getElementById('triggerCloseModal');
+    const pageModals          = document.getElementById('pageModals'),
+    boxModal            = pageModals.getElementsByClassName('box-modal'),
+    triggerOpenModal    = document.getElementsByClassName('triggerOpenModal'),
+    triggerCloseModal   = document.getElementsByClassName('triggerCloseModal'),
+    body                = document.getElementsByTagName('body')[0],
+    pageModalsOverlayer = document.getElementById('pageModalsOverlayer');
 
     const openModal = event => {
       const dataModal = event.currentTarget.getAttribute('data-modal');
       pageModals.classList.add('show');
+      pageModals.removeAttribute('aria-hidden');
+      body.classList.add('modal-open');
 
       for (let i=0, x=boxModal.length; i < x; i++) {
-        if(boxModal[i].getAttribute('data-modal') == dataModal) boxModal[i].classList.add('show');
+        if(boxModal[i].getAttribute('data-modal') == dataModal) {
+          boxModal[i].classList.add('show');
+        }
       }
     };
 
     const closeModal = () => {
       pageModals.classList.remove('show');
+      body.classList.remove('modal-open');
+      pageModals.setAttribute('aria-hidden', true);
       for (let i=0, x=boxModal.length; i < x; i++) {
         boxModal[i].classList.remove('show');
       }
@@ -27,14 +35,24 @@ document.addEventListener('DOMContentLoaded', function() {
       triggerOpenModal[i].addEventListener('click', openModal);
     }
 
-    triggerCloseModal.addEventListener('click', closeModal);
+    for(let i=0, x=triggerCloseModal.length; i < x; i++) {
+      triggerCloseModal[i].addEventListener('click', closeModal);
+    }
+
+    document.onkeydown = event => {
+      if(pageModals.classList.contains('show')) {
+        event = event || window.event;
+        if (event.keyCode == 27) closeModal();
+      }
+    };
+
+    pageModalsOverlayer.addEventListener('click', closeModal);
   }
-  /********** MODALS **********/
+  /********** Modals **********/
 
 
 
-
-  /********** INPUTS UNDERLINE ANIMATION **********/
+  /********** Inputs underline animation **********/
   let inputs = document.querySelectorAll('.input-animation input, .input-animation textarea');
 
   const focusInAnimation = event => {
@@ -54,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     inputs[i].addEventListener('input', focusInAnimation);
     inputs[i].addEventListener('focusout', focusOutAnimation);
   }
-  /********** INPUTS UNDERLINE ANIMATION **********/
+  /********** Inputs underline animation **********/
 
 
 
@@ -91,5 +109,49 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   /********** CUSTOM RADIO **********/
+
+
+  /********** checkbox outline when tab but not click **********/
+  const checkbox = document.querySelectorAll('.input-checkbox input'),
+        radio = document.querySelectorAll('.input-radio input'),
+        customCheckboxInputs = document.querySelectorAll('.custom-input-checkbox input'),
+        customRadioInputs = document.querySelectorAll('.custom-input-radio input');
+
+  const addFocusClass = event => {
+    event.currentTarget.parentNode.classList.add('focus');
+  };
+
+  const removeFocusClass = event => {
+    event.currentTarget.parentNode.classList.remove('focus');
+  };
+
+  for (let i=0, x=checkbox.length; i<x; i++) {
+    checkbox[i].addEventListener('focusin', addFocusClass);
+    checkbox[i].addEventListener('focusout', removeFocusClass);
+    checkbox[i].addEventListener('click', removeFocusClass);
+  }
+
+  for (let i=0, x=radio.length; i<x; i++) {
+    radio[i].addEventListener('focusin', addFocusClass);
+    radio[i].addEventListener('focusout', removeFocusClass);
+    radio[i].addEventListener('click', removeFocusClass);
+  }
+
+  for (let i=0, x=customCheckboxInputs.length; i<x; i++) {
+    customCheckboxInputs[i].addEventListener('focusin', addFocusClass);
+    customCheckboxInputs[i].addEventListener('focusout', removeFocusClass);
+    customCheckboxInputs[i].addEventListener('click', removeFocusClass);
+  }
+
+  for (let i=0, x=customRadioInputs.length; i<x; i++) {
+    customRadioInputs[i].addEventListener('focusin', addFocusClass);
+    customRadioInputs[i].addEventListener('focusout', removeFocusClass);
+    customRadioInputs[i].addEventListener('click', removeFocusClass);
+  }
+  /********** checkbox outline when tab but not click **********/
+
+
+
+
 
 }, false);

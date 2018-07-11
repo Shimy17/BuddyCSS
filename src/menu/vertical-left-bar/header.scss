@@ -40,6 +40,8 @@
         letter-spacing: 1px;
         @include transition(0.2s);
         text-transform: uppercase;
+
+        &:focus {outline: 1px solid #ffffff;}
       }
 
       &.has-sub-level {
@@ -78,6 +80,7 @@
             padding: 1rem 2rem 1rem 7.5rem;
             letter-spacing: 1px;
             font-weight: 300;
+            &:focus {outline: 1px solid #ffffff;}
           }
 
           &:hover {background-color: $main-color-darker;}

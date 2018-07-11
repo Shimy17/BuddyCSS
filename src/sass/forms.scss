@@ -4,6 +4,10 @@ input, select, textarea {
   background-color: $gray-lightest;
   border: 0;
   font-size: 1.6rem;
+
+  &:focus {
+    outline: 1px solid $main-color!important;
+  }
 }
 
 input[type=submit], button {
@@ -71,31 +75,49 @@ output:-moz-ui-invalid {color: $red;}
 
 .custom-select {
   position: relative;
+  background-color: $gray-lightest;
+
+  select {
+    position: relative;
+    z-index: 1;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    background-color: transparent;
+
+  }
+
+  select::-ms-expand {display: none;}
+
+
+
   &:after {
     content: "\f078";
     font-family: $icon-font-family;
     font-weight: 900;
     position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    padding: 1.9rem 2.6rem;
+    z-index: 0;
+    right: 2px;
+    top: 4px;
+    padding: 1.5rem 2.6rem 1.5rem;
     font-size: 1.8rem;
     background-color: $gray-lightest;
   }
 }
 
 .custom-input-checkbox {
-  display: inline-block;
   position: relative;
-  padding-left: 2rem;
+  padding-left: 3rem;
   cursor: pointer;
 
   input {
-    visibility: hidden;
-    @include opacity(0);
     height: 0;
     width: 0;
+    position: absolute;
+    left: -10px;
+    top: 15px;
+    @include opacity(0);
   }
 
   &:before {
@@ -122,6 +144,10 @@ output:-moz-ui-invalid {color: $red;}
     @include transition(0.2s);
   }
 
+  &.focus:before {
+    outline: 2px solid $gray;
+  }
+
   &.active:after {
     @include transform(translateY(-50%) scale(1));
     @include transition(0.2s);
@@ -129,16 +155,17 @@ output:-moz-ui-invalid {color: $red;}
 }
 
 .custom-input-radio {
-  display: inline-block;
   position: relative;
-  padding-left: 2rem;
+  padding-left: 3rem;
   cursor: pointer;
 
   input {
-    visibility: hidden;
-    @include opacity(0);
     height: 0;
     width: 0;
+    position: absolute;
+    left: -10px;
+    top: 15px;
+    @include opacity(0);
   }
 
   &:before {
@@ -151,6 +178,10 @@ output:-moz-ui-invalid {color: $red;}
     border-radius: 50%;
     border: 2px solid $main-color;
     content: "";
+  }
+
+  &.focus:before {
+    outline: 2px solid $gray;
   }
 
   &.active:after {
@@ -177,13 +208,14 @@ output:-moz-ui-invalid {color: $red;}
   button {
     position: absolute;
     right: 0;
-    top: 0;
-    padding: 1.9rem 2.3rem 1.9rem;
+    top: 1px;
+    padding: 1.8rem 2.3rem;
   }
 }
 
 .input-animation {
   position: relative;
+
 
   input:-webkit-autofill, textarea:-webkit-autofill, :-webkit-autofill {
       background-image: none !important;
@@ -208,6 +240,9 @@ output:-moz-ui-invalid {color: $red;}
     z-index: 1;
     height: inherit;
     min-height: inherit;
+    &:focus {
+      outline: 0!important;
+    }
   }
 
   &:after {
@@ -244,17 +279,26 @@ output:-moz-ui-invalid {color: $red;}
 }
 
 .input-checkbox, .input-radio {
-  display: inline-block;
+  position: relative;
   cursor: pointer;
+
+  label {padding-left: 2rem;}
+
   input {
-    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0.7rem;
     width: auto;
   }
 }
 
 .group-inputs {
   &.horizontal {
-    label {margin-right: 3rem;}
+    .input-checkbox, .input-radio {
+      display: inline-block;
+      margin-right: 3rem;
+      &:last-child {margin-right: 0;}
+    }
   }
 
   &.vertical {

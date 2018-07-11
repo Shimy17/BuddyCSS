@@ -80,6 +80,11 @@
           }
         }
 
+        &.has-sub-level.show:after {@include rotate(-180deg);}
+        &.show, &.show:hover {
+          ul {display: block;}
+        }
+
         &:hover {
           &.has-sub-level:after {@include rotate(-180deg);}
           > a:after {width: 100%;}
@@ -154,15 +159,13 @@
           margin: 0;
 
           &.has-sub-level:after {color: #ffffff;right: 3rem;}
-          &.has-sub-level.show:after {@include rotate(-180deg);}
-          &.show, &.show:hover {
-            ul {display: block;}
-          }
 
           > a {
             color: #ffffff;
             text-align: left;
             padding-right: 5rem;
+
+            &:focus {outline: 1px solid #ffffff;}
           }
 
           ul {
