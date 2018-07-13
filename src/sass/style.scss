@@ -19,7 +19,6 @@
 .page-fullscreen {
   @include flex-container();
   @include flex-direction-column();
-  padding: 3rem;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -57,7 +56,8 @@
 .page-wrapper {
   margin: auto;
   padding: 0 3rem;
-  max-width: 1170px;
+  max-width: $width-wrapper;
+  width: 100%;
 
   &.full-width {
     max-width: 100%;

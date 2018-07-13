@@ -1,3 +1,18 @@
+## 1.0.4
+
+
+### Added
+
+* **component**: `.page-fullscreen`
+
+### Updated
+
+* `.page-wrapper` added a width: 100%
+
+
+
+
+
 ## 1.0.3
 
 

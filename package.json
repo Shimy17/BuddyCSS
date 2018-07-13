@@ -1,6 +1,6 @@
 {
   "name": "buddycss",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Responsive CSS framework to build websites easily.",
   "keywords": [
     "css",
@@ -9,7 +9,8 @@
     "responsive",
     "front-end",
     "framework",
-    "web"
+    "web",
+    "mobile"
   ],
   "main": "index.js",
   "homepage": "https://www.buddycss.com",
