@@ -7,7 +7,7 @@
 
 ### Updated
 
-* `.page-wrapper` added a width: 100%
+* `.page-wrapper` added a width: 100% + creating special scss file for it (moved from style.scss to wrapper.scss)
 
 
 
