@@ -117,6 +117,13 @@ gulp.task("babel", function () {
   return gulp.src("src/js/*.js")
     .pipe(sourcemaps.init())
     .pipe(babel())
+    .on('error', function(err) {
+        console.log('[Compilation Error]');
+        console.log(err.fileName + ( err.loc ? `( ${err.loc.line}, ${err.loc.column} ): ` : ': '));
+        console.log('error Babel: ' + err.message + '\n');
+        console.log(err.codeFrame);
+        this.emit('end');
+    })
     .pipe(concat("buddy.js"))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("build/js"));
