@@ -1,5 +1,17 @@
-## 1.0.4
 
+## 1.0.5
+
+### Updated
+
+* `tabs` Entire HTML markup, JS and CSS have changed to get a better accessibility.
+* `gulpfile.js` Added a console error when babel compiles, to avoid gulp crash if a bug is found.
+
+
+
+
+
+
+## 1.0.4
 
 ### Added
 
@@ -14,7 +26,6 @@
 
 
 ## 1.0.3
-
 
 ### Added
 

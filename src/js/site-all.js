@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  /********** Modals **********/
+  /********** component modal **********/
   if(document.getElementById('pageModals')) {
     const pageModals          = document.getElementById('pageModals'),
     boxModal            = pageModals.getElementsByClassName('box-modal'),
@@ -48,11 +48,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     pageModalsOverlayer.addEventListener('click', closeModal);
   }
-  /********** Modals **********/
+  /********** component modal **********/
 
 
 
-  /********** Inputs underline animation **********/
+  /********** component form / input animation **********/
   let inputs = document.querySelectorAll('.input-animation input, .input-animation textarea');
 
   const focusInAnimation = event => {
@@ -72,11 +72,11 @@ document.addEventListener('DOMContentLoaded', function() {
     inputs[i].addEventListener('input', focusInAnimation);
     inputs[i].addEventListener('focusout', focusOutAnimation);
   }
-  /********** Inputs underline animation **********/
+  /********** component form / input animation **********/
 
 
 
-  /********** CUSTOM CHECKBOX **********/
+  /********** component form / custom checkbox **********/
   let customCheckbox = document.querySelectorAll('.custom-input-checkbox');
 
   const toggleActiveClass = event => {
@@ -90,11 +90,12 @@ document.addEventListener('DOMContentLoaded', function() {
       customCheckbox[i].classList.add('active');
     }
   }
-  /********** CUSTOM CHECKBOX **********/
+  /********** component form / custom checkbox **********/
 
 
 
-  /********** CUSTOM RADIO **********/
+
+  /********** component form / custom radio **********/
   let customRadio = document.querySelectorAll('.custom-input-radio');
 
   const addActiveClass = event => {
@@ -108,7 +109,9 @@ document.addEventListener('DOMContentLoaded', function() {
       customRadio[i].classList.add('active');
     }
   }
-  /********** CUSTOM RADIO **********/
+  /********** component form / custom radio **********/
+
+
 
 
   /********** checkbox outline when tab but not click **********/
@@ -152,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  /********** expand/collapse **********/
+  /********** component collapse **********/
   const boxCollapseTrigger = document.querySelectorAll('.box-collapse .box-collapse-trigger button'),
         boxCollapseContent = document.querySelectorAll('.box-collapse .box-collapse-content');
 
@@ -177,10 +180,52 @@ document.addEventListener('DOMContentLoaded', function() {
   for(let i=0, x=boxCollapseTrigger.length; i<x; i++) {
     boxCollapseTrigger[i].addEventListener('click', toggleBoxCollapse);
   }
-  /********** expand/collapse **********/
+  /********** component collapse **********/
 
 
 
+  /********** component tabs **********/
+  const tabsTriggers = document.querySelectorAll('.tabs-wrapper [role="tab"]'),
+        tabsPanels = document.querySelectorAll('.tabs-wrapper [role="tabpanel"]'),
+        tabsWrapper = document.getElementById('tabsWrapper');
 
+  if(window.innerWidth > 640) {
+    // set height to tabsWrapper depending of panel height + 100px
+    tabsWrapper.style.height = document.querySelector('[aria-selected="true"]').nextElementSibling.clientHeight + 100 + 'px';
+  }
+
+  window.addEventListener('resize', function() {
+    if(this.innerWidth > 640) tabsWrapper.style.height = document.querySelector('[aria-selected="true"]').nextElementSibling.clientHeight + 100 + 'px';
+    else tabsWrapper.style.height = 'auto';
+  });
+
+  const toggleTabsContent = event => {
+    const ariaControls = event.currentTarget.getAttribute('aria-controls');
+
+    for(let i=0, x=tabsPanels.length; i<x; i++) {
+      tabsPanels[i].setAttribute('hidden', 'true');
+      tabsTriggers[i].setAttribute('aria-selected', 'false')
+    }
+
+    event.currentTarget.setAttribute('aria-selected', 'true');
+
+    document.getElementById(ariaControls).removeAttribute('hidden');
+
+    if(window.innerWidth > 640) {
+      // set height to tabsWrapper depending of panel height + 100px
+      tabsWrapper.style.height = document.getElementById(ariaControls).clientHeight + 100 + 'px';
+    }
+
+    window.addEventListener('resize', function() {
+      if(this.innerWidth > 640) tabsWrapper.style.height = document.getElementById(ariaControls).clientHeight + 100 + 'px';
+      else tabsWrapper.style.height = 'auto';
+    });
+
+  };
+
+  for(let i=0, x=tabsTriggers.length; i<x; i++) {
+    tabsTriggers[i].addEventListener('click', toggleTabsContent);
+  }
+  /********** component tabs **********/
 
 }, false);

@@ -4,26 +4,15 @@
 }
 
 
-/********** PAGES **********/
+/********** Keep these lines if you use vertical left bar navigation **********/
 .page-header + .page-header-mobile + .page-content {
   margin-left: 30rem;
   @media(max-width: 1024px) {
     margin-left: 0;
   }
 }
+/********** Keep these lines if you use vertical left bar navigation **********/
 
 .page-content {
   margin-top: 10rem;
 }
-
-.page-wrapper {
-  margin: auto;
-  padding: 0 3rem;
-  max-width: $width-wrapper;
-  width: 100%;
-
-  &.full-width {
-    max-width: 100%;
-  }
-}
-/********** PAGES **********/

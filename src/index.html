@@ -1,7 +1,7 @@
 <!-- @@include includes/header.html -->
 
-<main>
-	<div class="page-fullscreen text-center">
+<main class="mt-10">
+	<!--<div class="page-fullscreen text-center">
 		<div class="page-wrapper">
 			<h1 class="mb-0">Welcome to BUDDYCSS</h1>
 			<p class="text-important mt-1">Your CSS framework to build awesome websites!</p>
@@ -15,5 +15,44 @@
 			<a href="https://github.com/BuddyCSS" target="_blank" class="link-social"><i class="fab fa-github"></i></a>
 			<a href="https://www.patreon.com/buddycss" target="_blank" class="link-social"><i class="fab fa-patreon"></i></a>
 		</div>
+	</div>-->
+
+	<div class="page-wrapper">
+		<div class="tabs-wrapper" id="tabsWrapper">
+	    <ul role="tablist" class="tabs" arial-label="tabs-description">
+	      <li>
+					<button role="tab" aria-selected="true" aria-controls="tab-1">tab 1</button>
+					<div tabindex="0" role="tabpanel" id="tab-1" aria-labelledby="tab-1" tabindex="0">
+			      <p>
+							Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia <a href="#">deserunt mollit anim id est laborum.</a>
+						</p>
+			    </div>
+				</li>
+	      <li>
+					<button role="tab" aria-selected="false" aria-controls="tab-2">tab 2</button>
+					<div tabindex="0" role="tabpanel" id="tab-2" aria-labelledby="tab-2" tabindex="0" hidden="">
+						<ul class="list-1">
+							<li>Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a></li>
+							<li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+							<li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</li>
+							<li>Excepteur sint occaecat cupidatat non proident</li>
+						</ul>
+			    </div>
+				</li>
+	      <li>
+					<button role="tab" aria-selected="false" aria-controls="tab-3">tab 3</button>
+					<div tabindex="0" role="tabpanel" id="tab-3" aria-labelledby="tab-3" tabindex="0" hidden="">
+			      <p>tab 3</p>
+			    </div>
+				</li>
+	    </ul>
+  	</div>
+
+		<p>
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+		</p>
 	</div>
 </main>
