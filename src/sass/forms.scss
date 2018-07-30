@@ -254,7 +254,7 @@ output:-moz-ui-invalid {color: $red;}
 
   input[type="checkbox"] + label::after {@include scale(0);@include transition(0.2s);}
   input[type="checkbox"]:checked + label::after {@include scale(1);@include transition(0.2s);}
-  input[type="checkbox"]:focus + label::before {outline: rgb(59, 153, 252) auto 5px;}
+  input[type="checkbox"]:focus + label::before {outline: 2px auto $main-color-light;}
 }
 
 .custom-input-radio  {
@@ -293,5 +293,5 @@ output:-moz-ui-invalid {color: $red;}
 
   input[type="radio"] + label::after {@include scale(0);@include transition(0.2s);}
   input[type="radio"]:checked + label::after {@include scale(1);@include transition(0.2s);}
-  input[type="radio"]:focus + label::before {outline: rgb(59, 153, 252) auto 5px;}
+  input[type="radio"]:focus + label::before {outline: 2px auto $main-color-light;}
 }

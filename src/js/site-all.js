@@ -77,34 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  /********** checkbox outline when tab but not click **********/
-  const checkbox = document.querySelectorAll('.input-checkbox input'),
-        radio = document.querySelectorAll('.input-radio input'),
-
-
-  const addFocusClass = event => {
-    event.currentTarget.parentNode.classList.add('focus');
-  };
-
-  const removeFocusClass = event => {
-    event.currentTarget.parentNode.classList.remove('focus');
-  };
-
-  for (let i=0, x=checkbox.length; i<x; i++) {
-    checkbox[i].addEventListener('focusin', addFocusClass);
-    checkbox[i].addEventListener('focusout', removeFocusClass);
-    checkbox[i].addEventListener('click', removeFocusClass);
-  }
-
-  for (let i=0, x=radio.length; i<x; i++) {
-    radio[i].addEventListener('focusin', addFocusClass);
-    radio[i].addEventListener('focusout', removeFocusClass);
-    radio[i].addEventListener('click', removeFocusClass);
-  }
-  /********** checkbox outline when tab but not click **********/
-
-
-
   /********** component collapse **********/
   const boxCollapseTrigger = document.querySelectorAll('.box-collapse .box-collapse-trigger button'),
         boxCollapseContent = document.querySelectorAll('.box-collapse .box-collapse-content');
