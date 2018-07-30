@@ -1,3 +1,13 @@
+## 1.0.6
+
+### Updated
+
+* `.custom-input-checkbox/radio` Removed JS from component, it is now pure CSS and still accessible
+
+
+
+
+
 
 ## 1.0.5
 
