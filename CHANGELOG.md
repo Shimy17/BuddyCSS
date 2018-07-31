@@ -5,6 +5,8 @@
 * `.custom-input-checkbox/radio` Removed JS from component, it is now pure CSS and still accessible
 * `FontAwesome` Upgraded to 5.2.0
 * `menu layout` HTML semantic and JS are now the same, you just have to add `.left-bar` on `.page-header` to have a left bar navigation instead of top bar, pretty cool isn't it?
+* `.input-animation` Fixed textarea expand + font size when input is focused. (2rem to 1.4rem)
+
 
 
 ## 1.0.5
