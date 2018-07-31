@@ -53,7 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   /********** component form / input animation **********/
-  let inputs = document.querySelectorAll('.input-animation input, .input-animation textarea');
+  const inputs = document.querySelectorAll('.input-animation input, .input-animation textarea'),
+        textarea = document.querySelectorAll('.input-animation textarea');
 
   const focusInAnimation = event => {
     event.currentTarget.parentNode.classList.add('active');
@@ -64,6 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
     event.currentTarget.parentNode.classList.remove('active');
   };
 
+  const resize = event => {
+    event.currentTarget.style.height = "1px";
+    event.currentTarget.style.height = event.currentTarget.scrollHeight + "px";
+  };
+
   for (let i=0, x=inputs.length; i<x; i++) {
     inputs[i].addEventListener('focusin', focusInAnimation);
     inputs[i].addEventListener('change', focusInAnimation);
@@ -72,6 +78,11 @@ document.addEventListener('DOMContentLoaded', function() {
     inputs[i].addEventListener('input', focusInAnimation);
     inputs[i].addEventListener('focusout', focusOutAnimation);
   }
+
+  for (let i=0, x=textarea.length; i<x; i++) {
+    textarea[i].addEventListener('keyup', resize);
+  }
+
   /********** component form / input animation **********/
 
 

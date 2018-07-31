@@ -133,7 +133,7 @@ output:-moz-ui-invalid {color: $red;}
 
   label {
     position: absolute;
-    bottom: 1.2rem;
+    top: 2rem;
     left: 2rem;
     z-index: 2;
     @include transition(0.3s);
@@ -168,9 +168,10 @@ output:-moz-ui-invalid {color: $red;}
 
   &.active {
     label {
-      bottom: 4rem;
+      top: -1rem;
       left: 0;
       color: $main-color;
+      font-size: 1.4rem;
       @include transition(0.3s);
     }
 
@@ -181,8 +182,7 @@ output:-moz-ui-invalid {color: $red;}
   }
 
   &.textarea {
-    &:after {bottom: 6px;}
-    &.active label {bottom: 7rem;}
+    &:after {bottom: 7px;}
   }
 }
 
