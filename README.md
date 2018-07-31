@@ -11,9 +11,10 @@
 
 ## Select your way to install
 
-- [Download the latest release.](https://buddycss.com/downloads/buddycss-1.0.5.zip)
+- [Download the latest release.](https://buddycss.com/downloads/buddycss-1.0.6.zip)
 - Clone the repo: `git clone https://github.com/BuddyCSS/BuddyCSS.git` and install it with `npm install` or `yarn`. Once it is installed, you just have to run `gulp`
 - `npm install buddycss`
+- `yarn add buddycss`
 
 BuddyCSS is a **CSS/JS** framework. You can either download the latest release and use the ready-to-use compiled code, clone the repo or install it with NPM.
 
