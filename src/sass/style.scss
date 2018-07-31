@@ -4,14 +4,16 @@
 }
 
 
-/********** Keep these lines if you use vertical left bar navigation **********/
-.page-header + .page-header-mobile + .page-content {
+
+.page-header.left-bar + .page-header-mobile + .page-content,
+.page-header.left-bar + .page-header-mobile + main,
+.page-header.left-bar + .page-header-mobile + .page-fullscreen {
   margin-left: 30rem;
   @media(max-width: 1024px) {
     margin-left: 0;
   }
 }
-/********** Keep these lines if you use vertical left bar navigation **********/
+
 
 .page-content {
   margin-top: 10rem;

@@ -10,25 +10,57 @@
   <!-- Go to  http://realfavicongenerator.net/ to get your own favicon readable on all platforms -->
 
   <meta name="author" content="Loïc Sciampagna">
-  <meta name="description" content="CSS responsive framework to build awesome websites easily.">
+  <meta name="description" content="CSS framework for people who are not afraid of coding.">
 
-  <meta property="og:url"                content="https://www.buddycss.com" />
+  <meta property="og:url"                content="https://buddycss.com" />
   <meta property="og:type"               content="Website" />
   <meta property="og:title"              content="BuddyCSS" />
-  <meta property="og:description"        content="CSS responsive framework to build awesome websites easily." />
-  <meta property="og:image"              content="https://www.buddycss.com/images/sharer-1.jpg" />
+  <meta property="og:description"        content="CSS framework for people who are not afraid of coding." />
+  <meta property="og:image"              content="https://buddycss.com/images/sharer-1.jpg" />
 
   <link href='//fonts.googleapis.com/css?family=Roboto:400,300,600,700,800,900,300italic,600italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="css/buddy.plugins.min.css">
-  <link rel="stylesheet" type="text/css" href="css/buddy.header.css">
-  <link rel="stylesheet" type="text/css" href="css/buddy.min.css">
+  <link rel="stylesheet" type="text/css" href="css/buddy.css">
 
   <script type="text/javascript" src="js/buddy.min.js"></script>
 </head>
 <body>
-
-  <!-- @@include ../menu/top-bar/index.html -->
-
-
-  <!-- To change menu, just edit the line above to get another html content, for SCSS you have to go to src/menu/name-menu,
-  copy SCSS file and paste it into src/scss -->
+  <div id="pageNavOverlay"></div>
+  <header class="page-header left-bar" role="banner">
+    <div class="page-wrapper full-width">
+      <a href="#" class="page-logo"><img src="images/logo-buddy-color.png"  alt=" " /></a>
+      <div class="page-nav" id="navOne">
+        <nav role="navigation">
+          <ul class="nav-primary">
+            <li class="has-sub-level">
+              <a href="#">Navigation 1</a>
+              <ul>
+                <li><a href="#">Sub navigation</a></li>
+                <li><a href="#">Sub navigation</a></li>
+                <li><a href="#">Sub navigation</a></li>
+                <li><a href="#">Sub navigation</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Navigation 1</a></li>
+            <li class="has-sub-level">
+              <a href="#">Navigation 1</a>
+              <ul>
+                <li><a href="#">Sub navigation</a></li>
+                <li><a href="#">Sub navigation</a></li>
+                <li><a href="#">Sub navigation</a></li>
+                <li><a href="#">Sub navigation</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Navigation 1</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div class="page-header-mobile">
+    <a href="#" class="page-logo"><img src="images/logo-buddy-color.png"  alt=" " /></a>
+    <button class="trigger-nav-container" data-trigger-nav="navOne">
+        <span class="title">Menu</span>
+        <span class="icon-burger"></span>
+    </button>
+  </div>

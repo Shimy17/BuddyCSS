@@ -76,84 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  /********** component form / custom checkbox **********/
-  let customCheckbox = document.querySelectorAll('.custom-input-checkbox');
-
-  const toggleActiveClass = event => {
-    event.currentTarget.classList.toggle('active');
-  };
-
-  for (let i=0, x=customCheckbox.length; i<x; i++) {
-    customCheckbox[i].addEventListener('change', toggleActiveClass);
-
-    if(customCheckbox[i].childNodes[0].checked == true) {
-      customCheckbox[i].classList.add('active');
-    }
-  }
-  /********** component form / custom checkbox **********/
-
-
-
-
-  /********** component form / custom radio **********/
-  let customRadio = document.querySelectorAll('.custom-input-radio');
-
-  const addActiveClass = event => {
-    event.currentTarget.classList.toggle('active');
-  };
-
-  for (let i=0, x=customRadio.length; i<x; i++) {
-    customRadio[i].addEventListener('change', addActiveClass);
-
-    if(customRadio[i].childNodes[0].checked == true) {
-      customRadio[i].classList.add('active');
-    }
-  }
-  /********** component form / custom radio **********/
-
-
-
-
-  /********** checkbox outline when tab but not click **********/
-  const checkbox = document.querySelectorAll('.input-checkbox input'),
-        radio = document.querySelectorAll('.input-radio input'),
-        customCheckboxInputs = document.querySelectorAll('.custom-input-checkbox input'),
-        customRadioInputs = document.querySelectorAll('.custom-input-radio input');
-
-  const addFocusClass = event => {
-    event.currentTarget.parentNode.classList.add('focus');
-  };
-
-  const removeFocusClass = event => {
-    event.currentTarget.parentNode.classList.remove('focus');
-  };
-
-  for (let i=0, x=checkbox.length; i<x; i++) {
-    checkbox[i].addEventListener('focusin', addFocusClass);
-    checkbox[i].addEventListener('focusout', removeFocusClass);
-    checkbox[i].addEventListener('click', removeFocusClass);
-  }
-
-  for (let i=0, x=radio.length; i<x; i++) {
-    radio[i].addEventListener('focusin', addFocusClass);
-    radio[i].addEventListener('focusout', removeFocusClass);
-    radio[i].addEventListener('click', removeFocusClass);
-  }
-
-  for (let i=0, x=customCheckboxInputs.length; i<x; i++) {
-    customCheckboxInputs[i].addEventListener('focusin', addFocusClass);
-    customCheckboxInputs[i].addEventListener('focusout', removeFocusClass);
-    customCheckboxInputs[i].addEventListener('click', removeFocusClass);
-  }
-
-  for (let i=0, x=customRadioInputs.length; i<x; i++) {
-    customRadioInputs[i].addEventListener('focusin', addFocusClass);
-    customRadioInputs[i].addEventListener('focusout', removeFocusClass);
-    customRadioInputs[i].addEventListener('click', removeFocusClass);
-  }
-  /********** checkbox outline when tab but not click **********/
-
-
 
   /********** component collapse **********/
   const boxCollapseTrigger = document.querySelectorAll('.box-collapse .box-collapse-trigger button'),
@@ -185,46 +107,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   /********** component tabs **********/
-  const tabsTriggers = document.querySelectorAll('.tabs-wrapper [role="tab"]'),
-        tabsPanels = document.querySelectorAll('.tabs-wrapper [role="tabpanel"]'),
-        tabsWrapper = document.getElementById('tabsWrapper');
-
-  if(window.innerWidth > 640) {
-    // set height to tabsWrapper depending of panel height + 100px
-    tabsWrapper.style.height = document.querySelector('[aria-selected="true"]').nextElementSibling.clientHeight + 100 + 'px';
-  }
-
-  window.addEventListener('resize', function() {
-    if(this.innerWidth > 640) tabsWrapper.style.height = document.querySelector('[aria-selected="true"]').nextElementSibling.clientHeight + 100 + 'px';
-    else tabsWrapper.style.height = 'auto';
-  });
-
-  const toggleTabsContent = event => {
-    const ariaControls = event.currentTarget.getAttribute('aria-controls');
-
-    for(let i=0, x=tabsPanels.length; i<x; i++) {
-      tabsPanels[i].setAttribute('hidden', 'true');
-      tabsTriggers[i].setAttribute('aria-selected', 'false')
-    }
-
-    event.currentTarget.setAttribute('aria-selected', 'true');
-
-    document.getElementById(ariaControls).removeAttribute('hidden');
+  if(document.getElementById('tabsWrapper')) {
+    const tabsTriggers = document.querySelectorAll('.tabs-wrapper [role="tab"]'),
+          tabsPanels = document.querySelectorAll('.tabs-wrapper [role="tabpanel"]'),
+          tabsWrapper = document.getElementById('tabsWrapper');
 
     if(window.innerWidth > 640) {
       // set height to tabsWrapper depending of panel height + 100px
-      tabsWrapper.style.height = document.getElementById(ariaControls).clientHeight + 100 + 'px';
+      tabsWrapper.style.height = document.querySelector('[aria-selected="true"]').nextElementSibling.clientHeight + 100 + 'px';
     }
 
     window.addEventListener('resize', function() {
-      if(this.innerWidth > 640) tabsWrapper.style.height = document.getElementById(ariaControls).clientHeight + 100 + 'px';
+      if(this.innerWidth > 640) tabsWrapper.style.height = document.querySelector('[aria-selected="true"]').nextElementSibling.clientHeight + 100 + 'px';
       else tabsWrapper.style.height = 'auto';
     });
 
-  };
+    const toggleTabsContent = event => {
+      const ariaControls = event.currentTarget.getAttribute('aria-controls');
 
-  for(let i=0, x=tabsTriggers.length; i<x; i++) {
-    tabsTriggers[i].addEventListener('click', toggleTabsContent);
+      for(let i=0, x=tabsPanels.length; i<x; i++) {
+        tabsPanels[i].setAttribute('hidden', 'true');
+        tabsTriggers[i].setAttribute('aria-selected', 'false')
+      }
+
+      event.currentTarget.setAttribute('aria-selected', 'true');
+
+      document.getElementById(ariaControls).removeAttribute('hidden');
+
+      if(window.innerWidth > 640) {
+        // set height to tabsWrapper depending of panel height + 100px
+        tabsWrapper.style.height = document.getElementById(ariaControls).clientHeight + 100 + 'px';
+      }
+
+      window.addEventListener('resize', function() {
+        if(this.innerWidth > 640) tabsWrapper.style.height = document.getElementById(ariaControls).clientHeight + 100 + 'px';
+        else tabsWrapper.style.height = 'auto';
+      });
+
+    };
+
+    for(let i=0, x=tabsTriggers.length; i<x; i++) {
+      tabsTriggers[i].addEventListener('click', toggleTabsContent);
+    }
   }
   /********** component tabs **********/
 
