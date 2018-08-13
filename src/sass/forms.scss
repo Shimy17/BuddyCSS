@@ -73,36 +73,41 @@ output:-moz-ui-invalid {color: $red;}
 
 
 
-.custom-select {
-  position: relative;
-  background-color: $gray-lightest;
 
-  select {
+.input {
+  .icon {
     position: relative;
-    z-index: 1;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 1px;
-    text-overflow: '';
-    background-color: transparent;
-
+    input {padding-left: 6rem;}
+    &:before {
+      position: absolute;
+      font-family: $icon-font-family;
+      font-weight: 900;
+      top: 18px;
+      left: 2rem;
+      font-size: 2rem;
+      color: $main-color;
+    }
   }
 
-  select::-ms-expand {display: none;}
+  &.is-disabled {
+    .icon {
+      cursor: not-allowed;
+      &:before {color: $gray;}
+    }
 
+    label {cursor: not-allowed;}
 
+    input:focus {outline: 0;}
 
-  &:after {
-    content: "\f078";
-    font-family: $icon-font-family;
-    font-weight: 900;
-    position: absolute;
-    z-index: 0;
-    right: 2px;
-    top: 4px;
-    padding: 1.5rem 2.6rem 1.5rem;
-    font-size: 1.8rem;
-    background-color: $gray-lightest;
+    input {
+      background-color: $gray-lighter;
+      cursor: not-allowed;
+    }
+  }
+
+  input:disabled {
+    background-color: $gray-lighter;
+    cursor: not-allowed;
   }
 }
 
@@ -198,6 +203,113 @@ output:-moz-ui-invalid {color: $red;}
     top: 0.7rem;
     width: auto;
   }
+
+  &.is-disabled {
+    label {color: $gray-light;cursor: not-allowed;}
+    input {cursor: not-allowed;}
+  }
+}
+
+.input-switch {
+
+
+  display: inline-block;
+  cursor: pointer;
+
+  input {
+    @include opacity(0);
+    position: absolute;
+    width: auto;
+  }
+
+  label {
+    display: inline-block;
+    margin-bottom: 0;
+    position: relative;
+    padding: 1rem 0;
+    cursor: pointer;
+    @include flex-container();
+
+    span {
+      padding-left: 9rem;
+      padding-top: 0.5rem;
+      display: inline-block;
+    }
+
+    &:before, &:after {
+      position: absolute;
+      content: "";
+      border-radius: 100px;
+    }
+
+    &:before {
+      width: 70px;
+      height: 35px;
+      background-color: $gray-lighter;
+      @include transition(0.3s);
+    }
+
+    &:after {
+      width: 25px;
+      height: 25px;
+      left: 5px;
+      top: 15px;
+      background-color: #ffffff;
+      @include transition(0.3s);
+    }
+  }
+
+
+
+  input:focus + label {
+    outline: 2px solid $main-color;
+  }
+
+  input:disabled + label {
+    cursor: not-allowed;
+    &:before {
+      background-color: $gray-lighter;
+    }
+    &:after {
+      left: 5px;
+    }
+  }
+
+
+  input:checked + label {
+    &:before {
+      background-color: $main-color;
+      @include transition(0.3s);
+    }
+    &:after {
+      left: 40px;
+      @include transition(0.3s);
+    }
+  }
+
+  @media(max-width: 767px) {
+    label {
+      &:before {
+        width: 65px;
+        height: 30px;
+      }
+
+      &:after {
+        width: 20px;
+        height: 20px;
+      }
+
+
+      span {
+        padding-left: 8rem;
+        padding-top: 0.2rem;
+      }
+    }
+
+    input:checked + label:after {
+      left: 40px;
+    }
+  }
 }
 
 .group-inputs {
@@ -216,7 +328,38 @@ output:-moz-ui-invalid {color: $red;}
 
 
 
+.custom-select {
+  position: relative;
+  background-color: $gray-lightest;
 
+  select {
+    position: relative;
+    z-index: 1;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    background-color: transparent;
+
+  }
+
+  select::-ms-expand {display: none;}
+
+
+
+  &:after {
+    content: "\f078";
+    font-family: $icon-font-family;
+    font-weight: 900;
+    position: absolute;
+    z-index: 0;
+    right: 2px;
+    top: 4px;
+    padding: 1.5rem 2.6rem 1.5rem;
+    font-size: 1.8rem;
+    background-color: $gray-lightest;
+  }
+}
 
 .custom-input-checkbox  {
   input[type="checkbox"] {@include opacity(0);}
@@ -255,6 +398,21 @@ output:-moz-ui-invalid {color: $red;}
   input[type="checkbox"] + label::after {@include scale(0);@include transition(0.2s);}
   input[type="checkbox"]:checked + label::after {@include scale(1);@include transition(0.2s);}
   input[type="checkbox"]:focus + label::before {outline: 2px auto $main-color-light;}
+
+
+  &.is-disabled {
+    label {
+      color: $gray-light;
+
+      &:before {
+        border-color: $gray-lighter
+      }
+
+      &:after {
+        color: $gray-lighter;
+      }
+    }
+  }
 }
 
 .custom-input-radio  {
@@ -294,4 +452,18 @@ output:-moz-ui-invalid {color: $red;}
   input[type="radio"] + label::after {@include scale(0);@include transition(0.2s);}
   input[type="radio"]:checked + label::after {@include scale(1);@include transition(0.2s);}
   input[type="radio"]:focus + label::before {outline: 2px auto $main-color-light;}
+
+  &.is-disabled {
+    label {
+      color: $gray-light;
+
+      &:before {
+        border-color: $gray-lighter
+      }
+
+      &:after {
+        color: $gray-lighter;
+      }
+    }
+  }
 }

@@ -220,10 +220,10 @@
 
 .btn-group {
 
+  @include flex-container-inline();
+
   &.vertical {
-    @include flex-container();
     @include flex-direction-column();
-    display: inline-flex;
 
     .btn {
       margin-left: 0!important;
@@ -231,11 +231,9 @@
       &:first-child {border-radius: 3px 3px 0 0;}
       &:last-child {border-radius: 0 0 3px 3px;}
     }
-
   }
   .btn {
-    margin-left: -4px;
-    &:first-child {margin-left: 0;margin-right: -1px;border-radius: 3px 0 0 3px}
+    &:first-child {margin-left: 0;border-radius: 3px 0 0 3px}
     &:last-child {border-radius: 0 3px 3px 0;}
   }
 }
