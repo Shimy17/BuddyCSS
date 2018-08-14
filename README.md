@@ -7,7 +7,8 @@
 [![Babel](https://img.shields.io/badge/babel--f5da55.svg)](https://babeljs.io/)
 
 <p align="center"><a href="https://buddycss.com/"><img src="https://buddycss.com/images/logo-buddy-color.png" alt="BuddyCSS" style="max-width:100%;" /></a></p>
-<p align="center">BuddyCSS is a CSS framework for people who love coding.</p>
+<p align="center">BuddyCSS is a CSS framework for people who love coding.</p
+  
 
 ## Select your way to install
 
@@ -16,11 +17,11 @@
 - `npm install buddycss`
 - `yarn add buddycss`
 
+## CDN
 
-
-
-BuddyCSS is a **CSS/JS** framework. You can either download the latest release and use the ready-to-use compiled code, clone the repo or install it with NPM.
-
+`<link rel="stylesheet" type="text/css" href="https://buddycss-cc55.kxcdn.com/downloads/1.0.7/css/buddycss.plugins.min.css">
+<link rel="stylesheet" type="text/css" href="https://buddycss-cc55.kxcdn.com/downloads/1.0.7/css/buddy.min.css">
+<script type="text/javascript" src="https://buddycss-cc55.kxcdn.com/downloads/1.0.7/js/buddy.min.js">`
 
 
 ## Browser Support
