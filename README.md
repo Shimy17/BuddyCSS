@@ -19,9 +19,9 @@
 
 ## CDN
 
-`<link rel="stylesheet" type="text/css" href="https://buddycss-cc55.kxcdn.com/downloads/1.0.7/css/buddycss.plugins.min.css">`
-`<link rel="stylesheet" type="text/css" href="https://buddycss-cc55.kxcdn.com/downloads/1.0.7/css/buddy.min.css">`
-`<script type="text/javascript" src="https://buddycss-cc55.kxcdn.com/downloads/1.0.7/js/buddy.min.js">`
+- `<link rel="stylesheet" type="text/css" href="https://buddycss-cc55.kxcdn.com/downloads/1.0.7/css/buddycss.plugins.min.css">`
+- `<link rel="stylesheet" type="text/css" href="https://buddycss-cc55.kxcdn.com/downloads/1.0.7/css/buddy.min.css">`
+- `<script type="text/javascript" src="https://buddycss-cc55.kxcdn.com/downloads/1.0.7/js/buddy.min.js">`
 
 
 ## Browser Support
