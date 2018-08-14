@@ -7,7 +7,7 @@
 [![Babel](https://img.shields.io/badge/babel--f5da55.svg)](https://babeljs.io/)
 
 <p align="center"><a href="https://buddycss.com/"><img src="https://buddycss.com/images/logo-buddy-color.png" alt="BuddyCSS" style="max-width:100%;" /></a></p>
-<p align="center">BuddyCSS is a CSS framework for people who love coding.</p
+<p align="center">BuddyCSS is a CSS framework for people who love coding.</p>
   
 
 ## Select your way to install
