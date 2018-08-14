@@ -1,7 +1,7 @@
 {
   "name": "buddycss",
-  "version": "1.0.6",
-  "description": "Responsive CSS framework to build websites easily.",
+  "version": "1.0.7",
+  "description": "BuddyCSS is a CSS framework for people who love coding.",
   "keywords": [
     "css",
     "sass",
@@ -13,7 +13,7 @@
     "mobile"
   ],
   "main": "index.js",
-  "homepage": "https://www.buddycss.com",
+  "homepage": "https://buddycss.com",
   "author": "Sciampagna Loïc",
   "license": "MIT",
   "dependencies": {},

@@ -15,7 +15,7 @@
   <meta property="og:url"                content="https://buddycss.com" />
   <meta property="og:type"               content="Website" />
   <meta property="og:title"              content="BuddyCSS" />
-  <meta property="og:description"        content="CSS framework for people who are not afraid of coding." />
+  <meta property="og:description"        content="BuddyCSS is a CSS framework for people who love coding." />
   <meta property="og:image"              content="https://buddycss.com/images/sharer-1.jpg" />
 
   <link href='//fonts.googleapis.com/css?family=Roboto:400,300,600,700,800,900,300italic,600italic' rel='stylesheet' type='text/css'>
@@ -26,39 +26,43 @@
 </head>
 <body>
   <div id="pageNavOverlay"></div>
-  <header class="page-header left-bar" role="banner">
+
+
+  <!-- .bottom-bar-mobile is used only when you have 5 items MAX, don't use this navigation if you have more than 5 items or less than 3 items,
+  sub navigations are hidden if you use .bottom-bar-mobile, the goal is to have a direct approach on the main info -->
+  <header class="page-header left-bar bottom-bar-mobile" role="banner">
     <div class="page-wrapper full-width">
-      <a href="#" class="page-logo"><img src="images/logo-buddy-color.png"  alt=" " /></a>
+      <a href="#" class="page-logo-color"><img src="images/logo-buddy-color.png"  alt=" " /></a>
       <div class="page-nav" id="navOne">
         <nav role="navigation">
           <ul class="nav-primary">
+            <li><a href="http://buddycss.com" class="is-selected"><i class="fas fa-home"></i> Home</a></li>
             <li class="has-sub-level">
-              <a href="#">Navigation 1</a>
+              <a href="http://buddycss.com"><i class="far fa-user"></i> About us</a>
               <ul>
-                <li><a href="#">Sub navigation</a></li>
-                <li><a href="#">Sub navigation</a></li>
-                <li><a href="#">Sub navigation</a></li>
-                <li><a href="#">Sub navigation</a></li>
+                <li><a href="#">Who we are</a></li>
+                <li><a href="#">Why we do it</a></li>
+                <li><a href="#">Another link</a></li>
               </ul>
             </li>
-            <li><a href="#">Navigation 1</a></li>
             <li class="has-sub-level">
-              <a href="#">Navigation 1</a>
+              <a href="http://buddycss.com"> <i class="fas fa-bars"></i> Services</a>
               <ul>
-                <li><a href="#">Sub navigation</a></li>
-                <li><a href="#">Sub navigation</a></li>
-                <li><a href="#">Sub navigation</a></li>
-                <li><a href="#">Sub navigation</a></li>
+                <li><a href="#">UX design</a></li>
+                <li><a href="#">UI design</a></li>
+                <li><a href="#">Front-end</a></li>
+                <li><a href="#">Database</a></li>
               </ul>
             </li>
-            <li><a href="#">Navigation 1</a></li>
+            <li><a href="http://buddycss.com"><i class="far fa-envelope"></i> Contact us</a></li>
           </ul>
         </nav>
       </div>
     </div>
   </header>
   <div class="page-header-mobile">
-    <a href="#" class="page-logo"><img src="images/logo-buddy-color.png"  alt=" " /></a>
+    <a href="#" class="page-logo-color"><img src="images/logo-buddy-color.png"  alt=" " /></a>
+    <a href="#" class="page-logo-white"><img src="images/logo-buddy.png"  alt=" " /></a>
     <button class="trigger-nav-container" data-trigger-nav="navOne">
         <span class="title">Menu</span>
         <span class="icon-burger"></span>

@@ -7,14 +7,17 @@
 [![Babel](https://img.shields.io/badge/babel--f5da55.svg)](https://babeljs.io/)
 
 <p align="center"><a href="https://buddycss.com/"><img src="https://buddycss.com/images/logo-buddy-color.png" alt="BuddyCSS" style="max-width:100%;" /></a></p>
-<p align="center">BuddyCSS is a simple CSS framework to build awesome websites easily.</p>
+<p align="center">BuddyCSS is a CSS framework for people who love coding.</p>
 
 ## Select your way to install
 
-- [Download the latest release.](https://buddycss.com/downloads/buddycss-1.0.6.zip)
+- [Download the latest release.](https://buddycss.com/downloads/buddycss-1.0.7.zip)
 - Clone the repo: `git clone https://github.com/BuddyCSS/BuddyCSS.git` and install it with `npm install` or `yarn`. Once it is installed, you just have to run `gulp`
 - `npm install buddycss`
 - `yarn add buddycss`
+
+
+
 
 BuddyCSS is a **CSS/JS** framework. You can either download the latest release and use the ready-to-use compiled code, clone the repo or install it with NPM.
 

@@ -4,7 +4,7 @@
   box-shadow: -2px 0px 10px -3px rgba(0,0,0,.2);
   z-index: 3;
 
-  .page-logo {
+  .page-logo-color, .page-logo-white {
     flex: 1 0 20%;
     img {width: 150px;}
   }
@@ -41,6 +41,15 @@
           display: block;
           padding: 3rem 2rem;
           position: relative;
+          @include flex-container();
+          align-items: center;
+
+          i {
+            display: none;
+            margin-right: 1.5rem;
+            font-size: 2.2rem;
+          }
+
           &:after {
             @include position(absolute, auto,0,0,0);
             content: "";
@@ -95,6 +104,7 @@
     width: 300px;
     overflow-y: auto;
     overflow-x: hidden;
+    box-shadow: 4px -4px 10px -4px rgba(0, 0, 0, 0.2);
 
     .page-wrapper {
       @include flex-direction-column();
@@ -103,7 +113,7 @@
       &.full-width {max-width: inherit;}
     }
 
-    .page-logo {
+    .page-logo-color, .page-logo-white {
       flex: 1;
       display: block;
       max-width: 100%;
@@ -137,7 +147,11 @@
             }
           }
 
-          a {padding: 3rem;&:after {content: none;}}
+          a {
+            padding: 3rem;
+            &:after {content: none;}
+            i {display: inline-block;}
+          }
 
           ul {
             position: static;
@@ -148,7 +162,7 @@
               a {
                 display: block;
                 padding: 2rem;
-                padding-left: 5rem;
+                padding-left: 6.5rem;
               }
             }
           }
@@ -185,7 +199,7 @@
       &.full-width {max-width: inherit;}
     }
 
-    .page-logo {
+    .page-logo-color, .page-logo-white {
       padding: 5rem 0;
       display: none!important;
     }
@@ -211,6 +225,8 @@
             &:after {content: none;}
 
             &:focus {outline: 1px solid #ffffff;}
+
+            i {display: inline-block;}
           }
 
           ul {
@@ -250,16 +266,90 @@
         }
       }
     }
+
+    &.bottom-bar-mobile {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: auto;
+      width: 100%;
+      height: auto;
+      transform: none;
+      -webkit-transform: none;
+      background-color: #ffffff;
+      overflow-y: visible;
+
+      .page-nav {
+        .nav-primary {
+          @include flex-container();
+          @include flex-direction-row();
+          > li {
+            flex: 1 0 0;
+
+            &.has-sub-level {
+              &:after {content: none;}
+            }
+
+            > a {
+              display: block;
+              text-align: center;
+              padding: 2rem 1rem;
+              font-size: 1.2rem;
+              color: $gray;
+
+              &.is-selected {
+                color: $main-color
+              }
+
+              i {
+                margin-bottom: 1rem;
+                margin-right: 0;
+                display: block;
+              }
+            }
+
+            &.show ul {display: none!important;}
+            &.show:hover ul {display: none!important;}
+            &:hover ul {display: none!important;}
+            ul {display: none!important;}
+            ul:hover {display: none!important;}
+          }
+        }
+      }
+
+      & + .page-header-mobile {
+        position: absolute;
+        background-color: transparent;
+
+        .trigger-nav-container {
+          display: none;
+        }
+
+        .page-logo-color {display: none;}
+        .page-logo-white {display: inline-block;}
+      }
+    }
   }
+}
+
+.page-header + .page-header-mobile {
+  .page-logo-white {display: none;}
+}
+
+.page-header.bottom-bar-mobile + .page-header-mobile {
+  .page-logo-white {display: inline-block;}
+  box-shadow: none!important;
 }
 
 .page-header-mobile {
   display: none;
   padding: 2rem;
   z-index: 1;
+  box-shadow: -2px 0px 10px -3px rgba(0,0,0,.2);
 
-  .page-logo img {
-    width: 175px;
+  .page-logo-color img, .page-logo-white img {
+    width: 150px;
   }
 
   @media(max-width: 1024px) {
@@ -276,7 +366,7 @@
 .trigger-nav-container {
   display: none;
   position: absolute;
-  top: 2.4rem;
+  top: 2.2rem;
   right: 5rem;
   background-color: transparent;
   justify-content: center;

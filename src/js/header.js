@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /********** OPEN/CLOSE NAVIGATION  WHEN CLICKING ON NAV TRIGGER  **********/
     const body = document.querySelector("body"),
-          pageHeader = document.querySelector('.page-header.left-bar'),
+          pageHeaderLeftBar = document.querySelector('.page-header.left-bar'),
+          pageHeaderTopBar = document.querySelector('.page-header:not(.left-bar):not(.bottom-bar-mobile)'),
+          pageHeaderBottomMobile = document.querySelector('.page-header.bottom-bar-mobile'),
           pageNavOverlay = document.querySelector("#pageNavOverlay"),
           pageNav = document.querySelectorAll(".page-nav"),
           triggerNavContainer = document.querySelectorAll('[data-trigger-nav]'),
@@ -37,10 +39,15 @@ document.addEventListener('DOMContentLoaded', function() {
     pageNavOverlay.addEventListener('click', closeNav);
 
 
-    //toggle the subnav with arrow (on mobile)
+    //toggle the subnav
     const toggleSubNav = event => {
-      event.preventDefault();
-      event.currentTarget.classList.toggle('show');
+      if(pageHeaderTopBar || pageHeaderLeftBar) {
+        if(!pageHeaderBottomMobile) event.preventDefault();
+      }
+
+      if(pageHeaderBottomMobile && window.innerWidth > 1024) event.preventDefault();
+
+      if(window.innerWidth < 1025 || pageHeaderLeftBar) event.currentTarget.classList.toggle('show');
     }
     let j=0;
     while(j < triggerSubNavPrimary.length) {
@@ -63,22 +70,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-    //accessibility
+    //accessibility enter key
     for(let i=0, x=navPrimaryLI.length; i<x; i++) {
       navPrimaryLI[i].addEventListener('keyup', event => {
-        if(event.currentTarget.classList.contains('has-sub-level')) {
-          if(event.keyCode === 13 ) event.currentTarget.classList.add('show');
+        for(let j=0, x=navPrimaryLI.length; j<x; j++) {
+          navPrimaryLI[j].classList.remove('show');
         }
-        else {
-          for(let j=0, x=navPrimaryLI.length; j<x; j++) {
-            navPrimaryLI[j].classList.remove('show');
-          }
-        }
+        event.currentTarget.classList.add('show');
       });
     }
 
     //accessibility
-    if(!pageHeader) {
+    if(!pageHeaderLeftBar) {
       document.addEventListener("click", function(event) {
         // If user clicks inside the navigation, do nothing, else remove active class
         if (event.target.closest(".has-sub-level")) return;
