@@ -43,7 +43,7 @@ For now, the documentation is available on [buddyCSS.com](https://buddycss.com/)
 
 ## Contact
 
-The framework is at his very first step, there is a lot of stuff to implement. If you have any ideas which could help me to improve my way to work contact me! I'm available on [slack](https://join.slack.com/t/buddycss/shared_invite/enQtMzk2NDQxODMxNjcwLWQ5MmQxNzFiNGUwY2QyZDE2YTlhMjkyMDFjZjNiYzAzZGNmYjkyMjI0OTIyOGM3OTQ3ZDc4ZTQ3MDFlMDFlMjE)
+The framework is at its very first step, there is a lot of stuff left to be implemented. If you have any ideas which could help me improve my work, feel free to contact me! I'm available on [slack](https://join.slack.com/t/buddycss/shared_invite/enQtMzk2NDQxODMxNjcwLWQ5MmQxNzFiNGUwY2QyZDE2YTlhMjkyMDFjZjNiYzAzZGNmYjkyMjI0OTIyOGM3OTQ3ZDc4ZTQ3MDFlMDFlMjE)
 
 
 ## Contributing
