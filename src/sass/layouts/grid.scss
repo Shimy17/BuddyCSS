@@ -59,10 +59,3 @@
     }
   }
 }
-
-
-.grid-1 {
-  @media(max-width: 767px) {
-    .column {flex: 0 0 100%;max-width: 100%;}
-  }
-}

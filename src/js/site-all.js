@@ -77,6 +77,10 @@ document.addEventListener('DOMContentLoaded', function() {
     inputs[i].addEventListener('blur', focusInAnimation);
     inputs[i].addEventListener('input', focusInAnimation);
     inputs[i].addEventListener('focusout', focusOutAnimation);
+
+    if(inputs[i].value != "" || inputs[i].getAttribute('placeholder') != "") {
+      inputs[i].parentNode.classList.add('active');
+    }
   }
 
   for (let i=0, x=textarea.length; i<x; i++) {

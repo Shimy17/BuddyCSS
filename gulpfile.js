@@ -148,7 +148,7 @@ gulp.task('serve', function() {
         server: "build/"
     });
 
-    gulp.watch('src/sass/*.scss', ['styles']);
+    gulp.watch('src/sass/**/*.scss', ['styles']);
     gulp.watch('src/js/*.js', ['scripts']);
     gulp.watch(['src/*.html', 'src/includes/*.html'], function(){ runSequence('includes', 'reload') });
     gulp.watch(['src/images/*'], ['copy-images']);
