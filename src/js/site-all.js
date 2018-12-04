@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   /********** component modal **********/
   if(document.getElementById('pageModals')) {
     const pageModals          = document.getElementById('pageModals'),
-    boxModal            = pageModals.getElementsByClassName('box-modal'),
+    boxModal            = pageModals.getElementsByClassName('box__modal'),
     triggerOpenModal    = document.getElementsByClassName('triggerOpenModal'),
     triggerCloseModal   = document.getElementsByClassName('triggerCloseModal'),
     body                = document.getElementsByTagName('body')[0],

@@ -272,14 +272,14 @@
 }
 
 
-.box-collapse {
+.box__collapse {
 	border: 1px solid $gray-lighter;
 	border-bottom: 0;
 	&:last-child {border-bottom: 1px solid $gray-lighter;}
 
-	& + .box-collapse {border-top: 1px solid $gray-lighter;}
+	& + .box__collapse {border-top: 1px solid $gray-lighter;}
 
-	.box-collapse__trigger {
+	.box__collapse--trigger {
 		h1, h2, h3, h4, h5, h6 {margin: 0;}
 
 		&.has-picto {
@@ -317,7 +317,7 @@
 		}
 	}
 
-	.box-collapse__content {
+	.box__collapse--content {
 		padding: 3rem;
 		display: none;
 

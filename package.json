@@ -16,9 +16,11 @@
   "homepage": "https://buddycss.com",
   "author": "Sciampagna Loïc",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "fontawesome": "^4.7.2"
+  },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.1.0",
+    "@fortawesome/fontawesome-free": "^5.5.0",
     "abbrev": "^1.1.1",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",

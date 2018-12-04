@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /********** OPEN/CLOSE NAVIGATION  WHEN CLICKING ON NAV TRIGGER  **********/
     const body = document.querySelector("body"),
-          pageHeaderLeftBar = document.querySelector('.page-header.left-bar'),
-          pageHeaderTopBar = document.querySelector('.page-header:not(.left-bar):not(.bottom-bar-mobile)'),
-          pageHeaderBottomMobile = document.querySelector('.page-header.bottom-bar-mobile'),
+          pageHeaderLeftBar = document.querySelector('.page-header.page-header--left-bar'),
+          pageHeaderTopBar = document.querySelector('.page-header:not(.page-header--left-bar):not(.page-header--bottom-bar-mobile)'),
+          pageHeaderBottomMobile = document.querySelector('.page-header.page-header--bottom-bar-mobile'),
           pageNavOverlay = document.querySelector("#pageNavOverlay"),
           pageNav = document.querySelectorAll(".page-nav"),
           triggerNavContainer = document.querySelectorAll('[data-trigger-nav]'),
-          triggerSubNavPrimary = document.querySelectorAll('.has-sub-level'),
+          triggerSubNavPrimary = document.querySelectorAll('.nav-primary__has-sub-level'),
           navPrimaryLI = document.querySelectorAll('.nav-primary > li');
 
 

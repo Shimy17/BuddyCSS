@@ -1,7 +1,7 @@
 
-.page-header.left-bar + .page-header-mobile + .page-content,
-.page-header.left-bar + .page-header-mobile + main,
-.page-header.left-bar + .page-header-mobile + .page-fullscreen {
+.page-header.page-header--left-bar + .page-header--mobile + .page-content,
+.page-header.page-header--left-bar + .page-header--mobile + main,
+.page-header.page-header--left-bar + .page-header--mobile + .page-fullscreen {
   margin-left: 30rem;
   @media(max-width: 1024px) {
     margin-left: 0;
